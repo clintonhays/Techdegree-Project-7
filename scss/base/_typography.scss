@@ -1,0 +1,68 @@
+//                                 //
+// - - - - - Base Styles - - - - - //
+//                                 //
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+//                             //
+// - - - - - Headers - - - - - //
+//                             //
+
+h1 {
+	@include app-name;
+	color: $white;
+
+	span {
+		font-style: italic;
+		font-weight: 500;
+	}
+}
+
+.search-alert-grid {
+	h2 {
+		@include header($sans-serif, center);
+		font-size: 1.875em;
+		margin: auto;
+	}
+}
+
+.search-alert-grid,
+.traffic-header,
+.daily-traffic,
+.mobile-users,
+.social-stats,
+.new-members,
+.recent-activity,
+.message-user,
+.settings {
+	h3 {
+		@include header($sans-serif, center);
+	}
+}
+
+.traffic-header,
+.social-stats.new-members,
+.recent-activity,
+.message-user,
+.settings {
+	h3 {
+		margin-top: 20px;
+	}
+}
+
+.daily-traffic,
+.mobile-users {
+	h3 {
+		margin-top: 0;
+	}
+}
+
+.new-members,
+.recent-activity,
+.settings {
+	h3 {
+		margin-bottom: 0;
+	}
+}

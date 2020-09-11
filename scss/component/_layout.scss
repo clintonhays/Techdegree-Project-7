@@ -1,0 +1,289 @@
+//				            //
+// - - - - - Body - - - - - //
+//							//
+
+header {
+	grid-area: head;
+}
+
+nav {
+	grid-area: navi;
+}
+
+main {
+	grid-area: main;
+}
+
+.grid-container {
+	@include grid-layout(auto, auto);
+	grid-template-areas: 'head' 'navi' 'main';
+	background-color: $background-color;
+}
+
+//						      //
+// - - - - - Header - - - - - //
+//							  //
+
+.header-grid {
+	@include grid-layout(60px, 7fr 1fr 1.5fr);
+	padding: 5px 10px;
+	background-color: $brand-color;
+
+	div {
+		margin: 0;
+		svg {
+			padding-top: 15px;
+			padding-right: 10px;
+		}
+	}
+
+	.username {
+		display: none;
+	}
+}
+
+//						             //
+// - - - - - Search/Alerts - - - - - //
+//									 //
+
+.main-header h2 {
+	grid-area: title;
+}
+
+.main-header-search {
+	grid-area: search;
+}
+
+.alert {
+	grid-area: alert;
+}
+
+.search-alert-grid {
+	@include grid-layout(repeat(3, 1fr), 1fr);
+	grid-template-areas: 'title' 'search' 'alert';
+	@include border-bottom;
+	padding-bottom: 10px;
+}
+
+//						       //
+// - - - - - Traffic - - - - - //
+//							   //
+
+.traffic-header {
+	grid-area: title-traffic;
+}
+
+.traffic-header ul {
+	display: flex;
+	justify-content: space-around;
+	list-style-type: none;
+	padding: 0;
+
+	li {
+		text-align: center;
+		width: 20%;
+		padding: 5px;
+
+		&:hover {
+			background-color: #21b6a8;
+			border-radius: 50px;
+			color: white;
+			box-shadow: 0px 3px 3px rgba(33, 182, 168, 0.2);
+		}
+	}
+}
+
+.canvas-container-full {
+	grid-area: chart-traffic;
+	@include margin-auto-center;
+}
+
+.traffic {
+	@include grid-layout(1fr 1.5fr, 1fr);
+	grid-template-areas: 'title-traffic' 'chart-traffic';
+	@include border-bottom;
+	padding-bottom: 20px;
+}
+
+//						            			  //
+// - - - - - Daily Traffic/Mobile Users - - - - - //
+//												  //
+
+.daily-traffic h3 {
+	grid-area: title-daily;
+}
+
+.daily-traffic-chart {
+	grid-area: dtchart;
+	@include margin-auto-center;
+}
+
+.daily-traffic {
+	@include grid-layout(.25fr 1fr, 1fr);
+	grid-template-areas: 'title-daily' 'dtchart';
+	padding: 20px 0px;
+}
+
+.mobile-users h3 {
+	grid-area: title-mobile;
+}
+
+.mobile-users-chart {
+	grid-area: muchart;
+	@include margin-auto-center;
+}
+
+.mobile-users {
+	@include grid-layout(.25fr 1fr, 1fr);
+	grid-template-areas: 'title-mobile' 'muchart';
+	padding-bottom: 20px;
+	@include border-bottom;
+}
+
+//						            //
+// - - - - - Social Stats - - - - - //
+//									//
+
+.social-container {
+	@include grid-layout(repeat(3, 1fr), 1fr);
+	row-gap: 2em;
+	padding-bottom: 20px;
+	@include border-bottom;
+}
+
+.twitter,
+.facebook,
+.google {
+	display: flex;
+	align-items: center;
+	@include card-layout($dark-accent-color, 5px, 90%);
+	box-shadow: 3px 3px 3px $dark-accent-color-shadow;
+	@include margin-auto-center;
+
+	.social-image {
+		padding-left: 5px;
+	}
+
+	.social-image,
+	.social-text {
+		width: 50%;
+		margin: 0;
+	}
+
+	.social-text {
+		p:first-child {
+			display: block;
+			margin-bottom: 0;
+			color: white;
+		}
+		p:last-child {
+			font-size: 2em;
+			margin-top: 0;
+			margin-bottom: 16px;
+			color: white;
+		}
+	}
+}
+
+//									  			   //
+// - - - - - New Members/Recent Activity - - - - - //
+//									               //
+
+.new-members,
+.recent-activity {
+	@include grid-layout(repeat(autofit, 1fr), 1fr);
+	row-gap: 1em;
+	padding-bottom: 20px;
+	@include border-bottom;
+}
+
+.member-container {
+	text-align: center;
+	@include card-layout($dark-accent-color, 5px, 90%);
+	@include margin-auto-center;
+	padding-top: 16px;
+	box-shadow: 3px 3px 3px $dark-accent-color-shadow;
+
+	.member-text {
+		line-height: 1.25em;
+
+		p {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.recent-activity .member-container {
+	padding-bottom: 16px;
+}
+
+//										 //
+// - - - - - Message/Settings  - - - - - //
+//										 //
+
+.message-user,
+.settings {
+	@include grid-layout(repeat(autofit, 1fr), 1fr);
+	row-gap: 2em;
+	padding-bottom: 20px;
+}
+
+.message-user {
+	@include border-bottom;
+}
+
+// Style placeholder text
+::placeholder {
+	padding-left: 10px;
+}
+
+.settings {
+	#timezone {
+		width: 95%;
+		margin: 0 auto;
+		margin-bottom: 1em;
+		padding: 0;
+		border: none;
+		border-radius: 5px;
+		resize: none;
+	}
+
+	label {
+		display: block;
+		width: 75px;
+		margin: auto;
+	}
+
+	p {
+		display: block;
+	}
+}
+
+//									  //
+// - - - - - Toggle Buttons - - - - - //
+//									  //
+
+.toggle-switches {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+
+	.email-toggle,
+	.profile-toggle {
+		width: 95%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.settings-buttons {
+	text-align: center;
+}
+
+button {
+	width: 45%;
+	display: inline;
+}

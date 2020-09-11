@@ -1,0 +1,49 @@
+//                            //
+// - - - - - Inputs - - - - - //
+//                            //
+
+.main-header-search {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-bottom: 20px;
+
+	.top-search {
+		width: 90%;
+		height: 1.6em;
+		background-color: $background-color;
+		box-shadow: none;
+		border-style: none;
+		border-bottom: 2px solid $light-accent-color;
+
+		&:focus {
+			outline-color: $light-accent-color;
+		}
+	}
+}
+
+//                           //
+// - - - - - Forms - - - - - //
+//                           //
+
+form {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.form-field {
+	height: 1.5em;
+}
+
+.form-field,
+.form-area {
+	display: block;
+	width: 90%;
+	@include margin-auto-center;
+	margin-bottom: 1em;
+	padding: 0;
+	border: none;
+	border-radius: 5px;
+	resize: none;
+}

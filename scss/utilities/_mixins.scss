@@ -1,0 +1,134 @@
+//						      //
+// - - - - - Mixins - - - - - //
+//						      //
+
+@mixin margin-auto-center {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin round {
+	border-radius: 50%;
+}
+
+@mixin app-name {
+	display: inline-block;
+	font-family: 'Palanquin', sans-serif;
+	font-weight: 100;
+	font-size: 1.5em;
+}
+
+@mixin quote {
+	font-size: 1.5em;
+	font-weight: $base-weight;
+	font-style: italic;
+	margin-left: 20px;
+	padding-left: 20px;
+	border-left: 8px solid;
+	border-radius: 5px;
+}
+
+@mixin btn-style {
+	margin-top: 15px;
+	width: 100%;
+	color: $white;
+	border: none;
+	padding: 10px 0;
+	text-transform: uppercase;
+	border-radius: 5px;
+}
+
+@mixin input-style ($width) {
+	display: block;
+	width: $width;
+	margin: 10px auto 0;
+	border: none;
+	padding: 10px;
+	border-bottom: 5px solid;
+}
+
+@mixin screen-reader-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+@mixin col-style {
+	margin-top: 10px;
+	flex-basis: 100%;
+	min-height: 25px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+@mixin avatar-style {
+	display: inline-block;
+	@include margin-auto-center;
+	max-width: 50px;
+	max-height: 50px;
+}
+
+@mixin avatar-style-med {
+	display: inline-block;
+	@include margin-auto-center;
+	max-width: 75px;
+	max-height: 75px;
+}
+
+@mixin avatar-style-sm {
+	display: inline-block;
+	@include margin-auto-center;
+	max-width: 50px;
+	max-height: 50px;
+}
+
+@mixin profile-img-med {
+	@include avatar-style-med;
+	@include round;
+}
+
+@mixin profile-img-sm {
+	@include avatar-style-sm;
+	@include round;
+}
+
+@mixin frame-style ($width) {
+	display: block;
+	@include margin-auto-center;
+	margin-top: 10px;
+	max-width: $width;
+	padding: 13px;
+}
+
+@mixin nav-link-style ($width) {
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px 0;
+	display: block;
+	width: $width;
+	transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+@mixin grid-layout($rows, $columns) {
+	display: grid;
+	grid-template-columns: ($columns);
+	grid-template-rows: ($rows);
+}
+
+@mixin header($font, $alignment) {
+	font-family: $font;
+	text-align: $alignment;
+}
+
+@mixin border-bottom {
+	border-bottom: 1px solid $dark-accent-color;
+}
+
+@mixin card-layout ($color, $radius, $width) {
+	background-color: $color;
+	border-radius: $radius;
+	width: $width;
+}

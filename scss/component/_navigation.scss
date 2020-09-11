@@ -1,0 +1,53 @@
+//						          //
+// - - - - - Navigation - - - - - //
+//					       		  //
+
+.nav-container {
+	.nav-bar {
+		list-style-type: none;
+		padding-left: 15px;
+		padding-bottom: 10px;
+		@include border-bottom;
+
+		a {
+			display: inline-block;
+			text-decoration: none;
+			vertical-align: auto;
+
+			&:visited {
+				color: initial;
+			}
+		}
+
+		.menu {
+			width: 60px;
+			@include grid-layout(minmax(30px, 1fr), 30px 200px);
+
+			.arrow {
+				font-size: 1.5em;
+				transition: all .3s ease-in;
+			}
+
+			.dropdown {
+				opacity: 0;
+				display: none;
+				width: 100%;
+				list-style-type: none;
+				padding-left: 15px;
+				transition: opacity .5s;
+			}
+
+			&:hover {
+				.dropdown {
+					opacity: 1;
+					display: flex;
+					justify-content: space-between;
+				}
+
+				.arrow {
+					transform: translateX(10px);
+				}
+			}
+		}
+	}
+}
