@@ -146,8 +146,8 @@ chartDisplay.addEventListener('click', (e) => {
 	else if (target.classList.contains('weekly')) {
 		data = weekly;
 	}
-	else if (target.classList.contains('monthly')){
-		data= ;
+	else if (target.classList.contains('monthly')) {
+		data = monthly;
 	}
 });
 
