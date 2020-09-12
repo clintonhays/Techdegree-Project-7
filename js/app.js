@@ -1,4 +1,43 @@
+//						                 //
+// - - - - - Notification Bell - - - - - //
+// 							             //
+
+const notificationBell = document.getElementById('notification');
+const notificationList = document.getElementById('notificationList');
+
+notificationBell.style.fill = 'red';
+
+notificationList.innerHTML = `
+<li><p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
+<p class="alert-banner-close">x</p></li>
+`;
+
+//						            //
+// - - - - - Alert Banner - - - - - //
+// 							        //
+
+const alertBanner = document.getElementById('alert');
+
+alertBanner.innerHTML = `
+<div class="alert-banner">
+    <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
+    <p class="alert-banner-close">x</p>
+</div>
+
+`;
+
+alertBanner.addEventListener('click', (e) => {
+	const element = e.target;
+	if (element.classList.contains('alert-banner-close')) {
+		alertBanner.style.display = 'none';
+	}
+});
+
 // - - - - - - - - - - - - - - - - - - - - Charts - - - - - - - - - - - - - - - - - - - - //
+
+//						       //
+// - - - - - Traffic - - - - - //
+// 							   //
 
 //							      //
 // - - - - - Line Chart - - - - - //
@@ -368,7 +407,7 @@ let dailyUsers = new Chart(dailyUserTrafficChart, {
 
 let mobileChart = document.getElementById('mobileChart').getContext('2d');
 
-let massPopChart3 = new Chart(mobileChart, {
+let mobileChartDisplay = new Chart(mobileChart, {
 	type    : 'doughnut',
 	data    : {
 		labels   : [
@@ -423,41 +462,24 @@ let massPopChart3 = new Chart(mobileChart, {
 
 // - - - - - - - - - - - - - - - - - - - - End Charts - - - - - - - - - - - - - - - - - - - - //
 
-//						                 //
-// - - - - - Notification Bell - - - - - //
-// 							             //
+// - - - - - - - - - - - - - - - - - - - - Messaging - - - - - - - - - - - - - - - - - - - - //
 
-const notificationBell = document.getElementById('notification');
-const notificationList = document.getElementById('notificationList');
+const user = document.getElementById('userField');
+const message = document.getElementById('messageField');
+const send = document.getElementById('send');
 
-notificationBell.style.fill = 'red';
-
-notificationList.innerHTML = `
-<li><p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-<p class="alert-banner-close">x</p></li>
-`;
-
-//						            //
-// - - - - - Alert Banner - - - - - //
-// 							        //
-
-const alertBanner = document.getElementById('alert');
-
-alertBanner.innerHTML = `
-<div class="alert-banner">
-    <p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-    <p class="alert-banner-close">x</p>
-</div>
-
-`;
-
-alertBanner.addEventListener('click', (e) => {
-	const element = e.target;
-	if (element.classList.contains('alert-banner-close')) {
-		alertBanner.style.display = 'none';
+send.addEventListener('click', () => {
+	if (user.value === '' && message.value === '') {
+		console.log('working');
+		alert('Please fill out both fields before sending');
+	}
+	else if (user.value === '') {
+		alert('Please fill out user search before sending');
+	}
+	else if (message.value === '') {
+		alert('Please fill out message field before sending');
+	}
+	else {
+		alert(`Message sent to ${user.value}`);
 	}
 });
-
-//						       //
-// - - - - - Traffic - - - - - //
-// 							   //
