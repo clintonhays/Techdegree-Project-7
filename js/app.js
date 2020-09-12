@@ -6,111 +6,177 @@
 
 let trafficChart = document.getElementById('trafficChart').getContext('2d');
 Chart.defaults.global.defaultFontColor = 'darkgray';
+const chartDisplay = document.getElementsByClassName('traffic-nav-link');
 
-const chartDisplay = document.getElementById('traffic-nav-link');
+let data = {};
+let hourly = {
+	labels   : [
+		'01-04',
+		'05-08',
+		'09-12',
+		'13-16',
+		'17-20',
+		'21-24'
+	],
+	datasets : [
+		{
+			data            : [
+				50,
+				100,
+				200,
+				600,
+				900,
+				175
+			],
+			backgroundColor : 'rgba(33, 182, 168, 0.2)',
+			borderColor     : 'rgb(33, 182, 168)'
+		}
+	]
+};
+let daily = {
+	labels   : [
+		'Mon',
+		'Tue',
+		'Wed',
+		'Thu',
+		'Fri',
+		'Sat'
+	],
+	datasets : [
+		{
+			data            : [
+				1200,
+				1050,
+				1250,
+				1800,
+				1600,
+				1200,
+				1000
+			],
+			backgroundColor : 'rgba(33, 182, 168, 0.2)',
+			borderColor     : 'rgb(33, 182, 168)'
+		}
+	]
+};
+let weekly = {
+	labels   : [
+		'09/01-09/07',
+		'09/08-09/014',
+		'09/15-09/021',
+		'09/22-09/28'
+	],
+	datasets : [
+		{
+			data            : [
+				7000,
+				6700,
+				8200,
+				9000
+			],
+			backgroundColor : 'rgba(33, 182, 168, 0.2)',
+			borderColor     : 'rgb(33, 182, 168)'
+		}
+	]
+};
+let monthly = {
+	labels   : [
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec'
+	],
+	datasets : [
+		{
+			data            : [
+				31000,
+				30000,
+				28000,
+				32000,
+				54000,
+				48000
+			],
+			backgroundColor : 'rgba(33, 182, 168, 0.2)',
+			borderColor     : 'rgb(33, 182, 168)'
+		}
+	]
+};
+let trafficChartDisplay = new Chart(trafficChart, {
+	type    : 'line',
+	data    : data,
+	options : {
+		scales : {
+			yAxes : [
+				{
+					display   : true,
+					gridLines : {
+						color : 'lightgray'
+					},
+					ticks     : {
+						suggestedMin  : 0,
+						suggestedMax  : 1000,
+						maxTicksLimit : 6
+					}
+				}
+			],
+			xAxes : [
+				{
+					display   : true,
+					gridLines : {
+						color : 'lightgray'
+					}
+				}
+			]
+		}
+	}
+});
 
-chartDisplay.addEventListener('click', (e) => {
-	const target = e.target;
-	let data;
-	let hourly = {
-		labels   : [
-			'01-04',
-			'05-08',
-			'09-12',
-			'13-16',
-			'17-20',
-			'21-24'
-		],
-		datasets : [
-			{
-				data            : [
-					50,
-					100,
-					200,
-					600,
-					900,
-					175
-				],
-				backgroundColor : 'rgba(33, 182, 168, 0.2)',
-				borderColor     : 'rgb(33, 182, 168)'
-			}
-		]
-	};
-	let daily = {
-		labels   : [
-			'Mon',
-			'Tue',
-			'Wed',
-			'Thu',
-			'Fri',
-			'Sat'
-		],
-		datasets : [
-			{
-				data            : [
-					1200,
-					1050,
-					1250,
-					1800,
-					1600,
-					1200,
-					1000
-				],
-				backgroundColor : 'rgba(33, 182, 168, 0.2)',
-				borderColor     : 'rgb(33, 182, 168)'
-			}
-		]
-	};
-	let weekly = {
-		labels   : [
-			'09/01-09/07',
-			'09/08-09/014',
-			'09/15-09/021',
-			'09/22-09/28'
-		],
-		datasets : [
-			{
-				data            : [
-					7000,
-					6700,
-					8200,
-					9000
-				],
-				backgroundColor : 'rgba(33, 182, 168, 0.2)',
-				borderColor     : 'rgb(33, 182, 168)'
-			}
-		]
-	};
-	let monthly = {
-		labels   : [
-			'Jul',
-			'Aug',
-			'Sep',
-			'Oct',
-			'Nov',
-			'Dec'
-		],
-		datasets : [
-			{
-				data            : [
-					31000,
-					30000,
-					28000,
-					32000,
-					54000,
-					48000
-				],
-				backgroundColor : 'rgba(33, 182, 168, 0.2)',
-				borderColor     : 'rgb(33, 182, 168)'
-			}
-		]
-	};
-
-	let trafficChart = new Chart(trafficChart, {
+chartDisplay[0].addEventListener('click', (e) => {
+	let trafficChartDisplay = new Chart(trafficChart, {
 		type    : 'line',
-		data    : data,
+		data    : hourly,
 		options : {
 			legend : false,
+			title  : {
+				display : true,
+				text    : 'Hourly Traffic'
+			},
+			scales : {
+				yAxes : [
+					{
+						display   : true,
+						gridLines : {
+							color : 'lightgray'
+						},
+						ticks     : {
+							maxTicksLimit : 6
+						}
+					}
+				],
+				xAxes : [
+					{
+						display   : true,
+						gridLines : {
+							color : 'lightgray'
+						}
+					}
+				]
+			}
+		}
+	});
+});
+
+chartDisplay[1].addEventListener('click', (e) => {
+	let trafficChartDisplay = new Chart(trafficChart, {
+		type    : 'line',
+		data    : daily,
+		options : {
+			legend : false,
+			title  : {
+				display : true,
+				text    : 'Daily Traffic'
+			},
 			scales : {
 				yAxes : [
 					{
@@ -136,19 +202,80 @@ chartDisplay.addEventListener('click', (e) => {
 			}
 		}
 	});
+});
 
-	if (target.classList.contains('hourly')) {
-		data = hourly;
-	}
-	else if (target.classList.contains('daily')) {
-		data = daily;
-	}
-	else if (target.classList.contains('weekly')) {
-		data = weekly;
-	}
-	else if (target.classList.contains('monthly')) {
-		data = monthly;
-	}
+chartDisplay[2].addEventListener('click', (e) => {
+	let trafficChartDisplay = new Chart(trafficChart, {
+		type    : 'line',
+		data    : weekly,
+		options : {
+			legend : false,
+			title  : {
+				display : true,
+				text    : 'Weekly Traffic'
+			},
+			scales : {
+				yAxes : [
+					{
+						display   : true,
+						gridLines : {
+							color : 'lightgray'
+						},
+						ticks     : {
+							suggestedMin  : 0,
+							suggestedMax  : 1000,
+							maxTicksLimit : 6
+						}
+					}
+				],
+				xAxes : [
+					{
+						display   : true,
+						gridLines : {
+							color : 'lightgray'
+						}
+					}
+				]
+			}
+		}
+	});
+});
+
+chartDisplay[3].addEventListener('click', (e) => {
+	let trafficChartDisplay = new Chart(trafficChart, {
+		type    : 'line',
+		data    : monthly,
+		options : {
+			legend : false,
+			title  : {
+				display : true,
+				text    : 'Monthly Traffic'
+			},
+			scales : {
+				yAxes : [
+					{
+						display   : true,
+						gridLines : {
+							color : 'lightgray'
+						},
+						ticks     : {
+							suggestedMin  : 0,
+							suggestedMax  : 1000,
+							maxTicksLimit : 6
+						}
+					}
+				],
+				xAxes : [
+					{
+						display   : true,
+						gridLines : {
+							color : 'lightgray'
+						}
+					}
+				]
+			}
+		}
+	});
 });
 
 //							     //
