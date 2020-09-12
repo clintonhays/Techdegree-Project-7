@@ -435,46 +435,53 @@ h1 span {
   font-weight: bold;
 }
 
-.notifications-container {
-  z-index: 2;
-  margin: 0;
+.modal {
+  background-color: #478c5c;
+  position: absolute;
+  left: 20%;
+  width: 250px;
+  border-radius: 10px;
+  z-index: 10;
 }
 
-.notifications-container .notification-messages {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
+.modalContainer {
+  display: flex;
+  flex-direction: column;
 }
 
-.notifications-container .notification-messages #messages {
-  text-align: right;
+.modalContent {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #b1d8b7;
 }
 
-.notifications-container .notification-messages #messages #notification {
-  display: inline-block;
+.closeModal {
+  width: 30px;
+  height: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.notifications-container .notification-messages #messages #notificationList {
+.closed {
   display: none;
-  width: 100%;
-  list-style-type: none;
-  padding: 0;
 }
 
-.notifications-container .notification-messages #messages:hover #notificationList {
-  background-color: dodgerblue;
-  display: grid;
-  grid-template-columns: 200px;
-  grid-template-rows: auto;
-  margin: 0;
+.traffic-nav-link {
+  text-align: center;
+  width: 20%;
+  padding: 5px;
 }
 
-.notifications-container .notification-messages #messages:hover #notificationList li {
-  width: 100%;
-}
-
-.notifications-container .notification-messages #messages:hover #notificationList li p {
-  display: block;
+.traffic-nav-link:active {
+  background-color: #21b6a8;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 0px 3px 3px rgba(33, 182, 168, 0.2);
 }
 
 .button-message {
@@ -968,19 +975,6 @@ main {
   justify-content: space-around;
   list-style-type: none;
   padding: 0;
-}
-
-.traffic-header ul li {
-  text-align: center;
-  width: 20%;
-  padding: 5px;
-}
-
-.traffic-header ul li:hover {
-  background-color: #21b6a8;
-  border-radius: 50px;
-  color: white;
-  box-shadow: 0px 3px 3px rgba(33, 182, 168, 0.2);
 }
 
 .canvas-container-full {

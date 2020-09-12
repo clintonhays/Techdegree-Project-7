@@ -2,15 +2,18 @@
 // - - - - - Notification Bell - - - - - //
 // 							             //
 
-const notificationBell = document.getElementById('notification');
-const notificationList = document.getElementById('notificationList');
+const notification = document.getElementById('notification');
+const alertBox = document.getElementById('modal');
+notification.style.fill = '#fd1700';
 
-notificationBell.style.fill = 'red';
-
-notificationList.innerHTML = `
-<li><p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-<p class="alert-banner-close">x</p></li>
-`;
+notification.addEventListener('click', () => {
+	if (alertBox.classList.contains('closed')) {
+		alertBox.classList.remove('closed');
+	}
+	else if (alertBox.classList.contains('closed') !== 1) {
+		alertBox.classList.add('closed');
+	}
+});
 
 //						            //
 // - - - - - Alert Banner - - - - - //
