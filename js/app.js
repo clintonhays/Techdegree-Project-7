@@ -3,16 +3,31 @@
 // 							             //
 
 const notification = document.getElementById('notification');
-const alertBox = document.getElementById('modal');
+const notificationContent = document.getElementsByClassName('modalContent');
+const notificationBox = document.getElementById('modal');
+const closeButton = document.getElementsByClassName('closeModal');
 notification.style.fill = '#fd1700';
 
 notification.addEventListener('click', () => {
-	if (alertBox.classList.contains('closed')) {
-		alertBox.classList.remove('closed');
+	if (notificationBox.classList.contains('closed')) {
+		notificationBox.classList.remove('closed');
 	}
-	else if (alertBox.classList.contains('closed') !== 1) {
-		alertBox.classList.add('closed');
+	else if (notificationBox.classList.contains('closed') !== 1) {
+		notificationBox.classList.add('closed');
 	}
+});
+
+closeButton[0].addEventListener('click', () => {
+	notificationContent[0].remove();
+	console.log('1');
+});
+closeButton[1].addEventListener('click', () => {
+	notificationContent[1].remove();
+	console.log('2');
+});
+closeButton.addEventListener('click', () => {
+	notificationContent.remove();
+	console.log('3');
 });
 
 //						            //

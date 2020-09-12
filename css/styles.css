@@ -449,12 +449,16 @@ h1 span {
   flex-direction: column;
 }
 
-.modalContent {
+.modalBody {
   padding: 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid #b1d8b7;
+}
+
+.modalBody p {
+  margin: 0;
 }
 
 .closeModal {
