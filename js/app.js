@@ -17,18 +17,11 @@ notification.addEventListener('click', () => {
 	}
 });
 
-closeButton[0].addEventListener('click', () => {
-	notificationContent[0].remove();
-	console.log('1');
-});
-closeButton[1].addEventListener('click', () => {
-	notificationContent[1].remove();
-	console.log('2');
-});
-closeButton.addEventListener('click', () => {
-	notificationContent.remove();
-	console.log('3');
-});
+for (let i = 0; i < closeButton.length; i++) {
+	closeButton[i].addEventListener('click', () => {
+		notificationContent[i].remove();
+	});
+}
 
 //						            //
 // - - - - - Alert Banner - - - - - //
