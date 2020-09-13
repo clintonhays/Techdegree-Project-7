@@ -19,12 +19,17 @@
 
 	.alert-banner-close {
 		font-weight: bold;
+		cursor: pointer;
 	}
 }
 
 //                                   //
 // - - - - - Notifications - - - - - //
 //                                   //
+
+#notification:hover {
+	cursor: pointer;
+}
 
 .modal {
 	background-color: $dark-accent-color;
@@ -62,6 +67,10 @@
 	outline: none;
 	font-size: 1.5rem;
 	font-weight: bold;
+
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .closed {
@@ -84,6 +93,10 @@
 	text-align: center;
 	width: 20%;
 	padding: 5px;
+
+	&:hover {
+		cursor: pointer;
+	}
 
 	&:active {
 		background-color: #21b6a8;

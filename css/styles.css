@@ -433,6 +433,11 @@ h1 span {
 
 .alert-banner .alert-banner-close {
   font-weight: bold;
+  cursor: pointer;
+}
+
+#notification:hover {
+  cursor: pointer;
 }
 
 .modal {
@@ -472,6 +477,10 @@ h1 span {
   font-weight: bold;
 }
 
+.closeModal:hover {
+  cursor: pointer;
+}
+
 .closed {
   display: none;
 }
@@ -488,6 +497,10 @@ h1 span {
   text-align: center;
   width: 20%;
   padding: 5px;
+}
+
+.traffic-nav-link:hover {
+  cursor: pointer;
 }
 
 .traffic-nav-link:active {
