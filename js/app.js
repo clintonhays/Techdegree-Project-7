@@ -3,10 +3,10 @@
 // 							             //
 
 const notification = document.getElementById('notification');
-const notificationContent = document.getElementsByClassName('modalContent');
+const notificationContainer = document.getElementById('modalContainer');
+const notificationContent = document.querySelectorAll('.modalContent');
 const notificationBox = document.getElementById('modal');
 const closeButton = document.getElementsByClassName('closeModal');
-notification.style.fill = '#fd1700';
 
 notification.addEventListener('click', () => {
 	if (notificationBox.classList.contains('closed')) {
@@ -18,9 +18,16 @@ notification.addEventListener('click', () => {
 });
 
 for (let i = 0; i < closeButton.length; i++) {
-	closeButton[i].addEventListener('click', () => {
+	closeButton[i].addEventListener('click', (e) => {
 		notificationContent[i].remove();
 	});
+}
+
+if (notificationContainer.children.length > 0) {
+	notification.firstElementChild.setAttribute('class', 'alert');
+}
+else if (notificationContainer.children.length < 0) {
+	notification.firstElementChild.setAttribute('class', 'clear');
 }
 
 //						            //

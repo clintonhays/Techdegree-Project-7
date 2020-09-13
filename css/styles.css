@@ -418,7 +418,7 @@ h1 span {
 .alert-banner {
   border-radius: 5px;
   padding: 5px 10px 5px;
-  background: #fd1700;
+  background: #fd1706;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -473,6 +473,14 @@ h1 span {
 
 .closed {
   display: none;
+}
+
+.clear {
+  fill: white;
+}
+
+.alert {
+  fill: #fd1706;
 }
 
 .traffic-nav-link {
