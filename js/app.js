@@ -501,3 +501,45 @@ send.addEventListener('click', () => {
 		alert(`Message sent to ${user.value}`);
 	}
 });
+
+// - - - - - - - - - - - - - - - - - - - - Settings Storage - - - - - - - - - - - - - - - - - - - - //
+
+const email = document.getElementById('emailToggle');
+const profile = document.getElementById('profileToggle');
+const timezone = document.getElementById('timezone');
+const saveButton = document.getElementById('saveButton');
+const resetButton = document.getElementById('resetButton');
+
+function store () {
+	localStorage.setItem('emailChecked', email.checked);
+	localStorage.setItem('profileChecked', profile.checked);
+	localStorage.setItem('timezone', timezone.value);
+}
+
+function reset () {
+	window.localStorage.clear();
+}
+
+function load () {
+	if (localStorage.emailChecked === 'true') {
+		email.checked = true;
+	}
+	if (localStorage.profileChecked === 'true') {
+		profile.checked = true;
+	}
+	if (localStorage.timezone) {
+		timezone.value = localStorage.timezone;
+	}
+}
+
+saveButton.addEventListener('click', () => {
+	store();
+	load();
+	window.location.reload();
+});
+
+resetButton.addEventListener('click', () => {
+	reset();
+	load();
+	window.location.reload();
+});

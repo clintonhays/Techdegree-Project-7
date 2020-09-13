@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/toggle-switch.css">
     <title>Employee Dashboard</title>
 </head>
-<body class="grid-container">
+<body class="grid-container" onload="load();"> <!--onload="load();"-->
     <header class="header-grid">
         <h1>Work<span>Flow</span></h1>
         <div class="notifications-container">
@@ -271,7 +271,13 @@
             <section class="message-user">
                 <h3>Message User</h3>
                 <form action="" method="">
-                    <input class="form-field" type="text" name="user" id="userField" placeholder="User's name">
+                    <input class="form-field" type="text" name="user" id="userField" list="users" placeholder="Search for User...">
+                    <datalist id="users" style="background-color: white;">
+                        <option>Victoria Chambers</option>
+                        <option>Dale Byrd</option>
+                        <option>Dawn Wood</option>
+                        <option>Dan Oliver</option>
+                    </datalist>
                     <textarea class="form-area" name="message" id="messageField" cols="30" rows="10" placeholder="Message for User"></textarea>
                     <button class="button-style button-message" type="submit" id="send">Send</button>
                 </form>
@@ -284,7 +290,7 @@
                         <p>Send Email Notifications</p>
                         <div class="toggle-switch">
                             <label class="switch-light switch-ios" onclick="">
-                                <input type="checkbox">                  
+                                <input id="emailToggle" type="checkbox">                  
                                 <span>
                                 <span>Off</span>
                                 <span>On</span>
@@ -298,7 +304,7 @@
                     <p>Set Profile to Public</p>
                         <div class="toggle-switch">
                             <label class="switch-light switch-ios" onclick="">
-                                <input type="checkbox">                  
+                                <input id="profileToggle" type="checkbox">                  
                                 <span>
                                 <span>Off</span>
                                 <span>On</span>
@@ -396,8 +402,8 @@
                 </select>
                 
                 <div class="settings-buttons">
-                    <button class="button-style" type="submit">Save</button>
-                    <button class="button-style" type="reset">Cancel</button>
+                    <button class="button-style" id="saveButton" type="submit">Save Settings</button>
+                    <button class="button-style" id="resetButton" type="reset">Restore Settings</button>
                 </div>
             </section>
         </div>

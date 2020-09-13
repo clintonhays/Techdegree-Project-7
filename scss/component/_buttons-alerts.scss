@@ -28,8 +28,10 @@
 
 .modal {
 	background-color: $dark-accent-color;
-	position: absolute;
-	left: 20%;
+	position: fixed;
+	top: 12%;
+	left: 50%;
+
 	width: 250px;
 	border-radius: 10px;
 	z-index: 10;

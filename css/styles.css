@@ -437,8 +437,9 @@ h1 span {
 
 .modal {
   background-color: #478c5c;
-  position: absolute;
-  left: 20%;
+  position: fixed;
+  top: 12%;
+  left: 50%;
   width: 250px;
   border-radius: 10px;
   z-index: 10;
@@ -1301,6 +1302,9 @@ button {
     padding-right: 5px;
     color: #fff;
   }
+  .header-grid .modal {
+    left: 14%;
+  }
   #notification {
     right: 195px;
   }
@@ -1328,6 +1332,9 @@ button {
   }
   .header-grid .notifications-container {
     text-align: right;
+  }
+  .header-grid .modal {
+    left: 48%;
   }
   .nav-container {
     background-color: #b1d8b7;
@@ -1476,6 +1483,9 @@ button {
   }
   .header-grid .username {
     margin-left: 0;
+  }
+  .header-grid .modal {
+    left: 60%;
   }
   .search-alert-grid {
     display: grid;

@@ -14,6 +14,10 @@
 			padding-right: 5px;
 			color: $white;
 		}
+
+		.modal {
+			left: 14%;
+		}
 	}
 
 	#notification {
@@ -44,6 +48,10 @@
 
 		.notifications-container {
 			text-align: right;
+		}
+
+		.modal {
+			left: 48%;
 		}
 	}
 
@@ -215,6 +223,10 @@
 
 		.username {
 			margin-left: 0;
+		}
+
+		.modal {
+			left: 60%;
 		}
 	}
 
