@@ -438,6 +438,8 @@ h1 span {
 
 #notification:hover {
   cursor: pointer;
+  transition: all .2s ease-in;
+  transform: scale(1.1);
 }
 
 .modal {
@@ -458,12 +460,13 @@ h1 span {
 .modalBody {
   padding: 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #b1d8b7;
 }
 
 .modalBody p {
+  text-align: left;
   margin: 0;
 }
 
@@ -485,12 +488,20 @@ h1 span {
   display: none;
 }
 
-.alert {
-  fill: #fd1706;
-}
-
 .clear {
   fill: white;
+}
+
+#alert-circle {
+  position: absolute;
+  top: 15px;
+  right: 88px;
+  background-color: #fd1706;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
 }
 
 .traffic-nav-link {
@@ -1317,6 +1328,9 @@ button {
   .header-grid .modal {
     left: 14%;
   }
+  #alert-circle {
+    right: 203px;
+  }
   #notification {
     right: 195px;
   }
@@ -1347,6 +1361,9 @@ button {
   }
   .header-grid .modal {
     left: 48%;
+  }
+  #alert-circle {
+    right: 156px;
   }
   .nav-container {
     background-color: #b1d8b7;
@@ -1498,6 +1515,9 @@ button {
   }
   .header-grid .modal {
     left: 60%;
+  }
+  .header-grid #alert-circle {
+    right: 162px;
   }
   .search-alert-grid {
     display: grid;

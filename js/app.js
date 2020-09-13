@@ -2,14 +2,12 @@
 // - - - - - Notification Bell - - - - - //
 // 							             //
 
+const alertCircle = document.getElementById('alert-circle');
 const notification = document.getElementById('notification');
 const notificationContainer = document.getElementById('modalContainer');
 const notificationContent = document.querySelectorAll('.modalContent');
 const notificationBox = document.getElementById('modal');
 const closeButton = document.getElementsByClassName('closeModal');
-if (notificationContainer.children.length > 0) {
-	notification.firstElementChild.setAttribute('class', 'alert');
-}
 
 notification.addEventListener('click', () => {
 	if (notificationBox.classList.contains('closed')) {
@@ -24,7 +22,7 @@ for (let i = 0; i < closeButton.length; i++) {
 	closeButton[i].addEventListener('click', (e) => {
 		notificationContent[i].remove();
 		if (notificationContainer.children.length < 1) {
-			notification.firstElementChild.setAttribute('class', 'clear');
+			alertCircle.style.display = 'none';
 		}
 	});
 }
@@ -160,8 +158,13 @@ let monthly = {
 };
 let trafficChartDisplay = new Chart(trafficChart, {
 	type    : 'line',
-	data    : data,
+	data    : hourly,
 	options : {
+		legend : false,
+		title  : {
+			display : true,
+			text    : 'Hourly Traffic'
+		},
 		scales : {
 			yAxes : [
 				{
@@ -474,7 +477,11 @@ let mobileChartDisplay = new Chart(mobileChart, {
 			}
 		]
 	},
-	options : {}
+	options : {
+		legend : {
+			position : 'right'
+		}
+	}
 });
 
 // - - - - - - - - - - - - - - - - - - - - End Charts - - - - - - - - - - - - - - - - - - - - //
