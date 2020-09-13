@@ -1114,7 +1114,7 @@ main {
 .recent-activity {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(autofit, 1fr);
+  grid-template-rows: auto;
   row-gap: 1em;
   padding-bottom: 20px;
   border-bottom: 1px solid #478c5c;
@@ -1215,7 +1215,6 @@ button {
 .nav-container .nav-bar a {
   display: inline-block;
   text-decoration: none;
-  vertical-align: auto;
 }
 
 .nav-container .nav-bar a:visited {

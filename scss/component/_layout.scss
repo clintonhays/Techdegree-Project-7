@@ -178,7 +178,7 @@ main {
 
 .new-members,
 .recent-activity {
-	@include grid-layout(repeat(autofit, 1fr), 1fr);
+	@include grid-layout(auto, 1fr);
 	row-gap: 1em;
 	padding-bottom: 20px;
 	@include border-bottom;
