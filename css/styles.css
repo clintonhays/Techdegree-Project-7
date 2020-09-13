@@ -475,12 +475,12 @@ h1 span {
   display: none;
 }
 
-.clear {
-  fill: white;
-}
-
 .alert {
   fill: #fd1706;
+}
+
+.clear {
+  fill: white;
 }
 
 .traffic-nav-link {
